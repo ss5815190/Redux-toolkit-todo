@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, { useCallback } from 'react';
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux';
