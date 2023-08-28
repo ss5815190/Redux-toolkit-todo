@@ -36,15 +36,22 @@ function App() {
       />
       <ul>
         {todoList.map((todo) => (
-          // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
           <li
             key={todo.id}
             style={{
               textDecoration: todo.completed ? 'line-through' : 'none',
             }}
-            onClick={() => handleToggleTodo(todo.id)}
           >
-            {todo.text}
+            <button
+              className="todoText"
+              type="button"
+              style={{
+                textDecoration: todo.completed ? 'line-through' : 'none',
+              }}
+              onClick={() => handleToggleTodo(todo.id)}
+            >
+              {todo.text}
+            </button>
             <ul>
               {` date${todo.date}`}
               <button type="button" onClick={() => handleDelTodo(todo.id)}>del</button>
