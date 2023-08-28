@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useCallback } from 'react';
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { todoListAction } from './store/todoSlice';
@@ -7,16 +7,19 @@ import { todoListAction } from './store/todoSlice';
 function App() {
   const todoList = useSelector((state) => state.todoListSlice);
   const dispatch = useDispatch();
-  const handleAddTodo = (text) => {
-    dispatch(todoListAction.addTodo(text));
-  };
 
-  const handleToggleTodo = (id) => {
+  const handleAddTodo = useCallback((text) => {
+    dispatch(todoListAction.addTodo(text));
+  }, [dispatch]);
+
+  const handleToggleTodo = useCallback((id) => {
     dispatch(todoListAction.toggleTodo(id));
-  };
-  const handleDelTodo = (id) => {
+  }, [dispatch]);
+
+  const handleDelTodo = useCallback((id) => {
     dispatch(todoListAction.delTodo(id));
-  };
+  }, [dispatch]);
+
   console.log(todoList);
   return (
     <div className="App">
