@@ -19,6 +19,7 @@ function App() {
     dispatch(todoListAction.delTodo(id));
   }, [dispatch]);
 
+
   return (
     <div className="App">
       <h1>Todo List</h1>
