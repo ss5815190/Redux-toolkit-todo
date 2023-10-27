@@ -19,10 +19,9 @@ function App() {
     dispatch(todoListAction.delTodo(id));
   }, [dispatch]);
 
-
   return (
     <div className="App">
-      <h1>Todo List</h1>
+      <h1>Todo List test1 branch</h1>
       <input
         type="text"
         placeholder="Add a new todo"
